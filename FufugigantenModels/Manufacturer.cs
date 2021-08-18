@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace FufugigantenModels
@@ -13,6 +14,7 @@ namespace FufugigantenModels
         public string Name { get; set; }
 
         // Constructor, takes name
+        [JsonConstructor]
         public Manufacturer(string name)
         {
             Name = name;
@@ -25,6 +27,11 @@ namespace FufugigantenModels
 
             Name = name;
 
+        }
+
+        public void SetId(int id)
+        {
+            ManufacturerId = id;
         }
     }
 }

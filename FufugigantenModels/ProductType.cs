@@ -19,6 +19,7 @@ namespace FufugigantenModels
             Type = type;
         }
 
+        // Constructor overload, takes id, name
         public ProductType(int productTypeId, string type)
         {
             ProductTypeId = productTypeId;

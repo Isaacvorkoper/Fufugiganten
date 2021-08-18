@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FufugigantenModels\FufugigantenModels.csproj" />
     <ProjectReference Include="..\FufugigantenORM\FufugigantenORM.csproj" />
   </ItemGroup>
 
