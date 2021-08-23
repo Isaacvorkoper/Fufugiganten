@@ -6,13 +6,10 @@ namespace FufugigantenORM
 {
     public interface IORM
     {
-        public List<Customer> GetCustomer();
-        public Customer GetCustomer(int id);
-        public List<Product> GetProduct();
-        public Product GetProduct(int id);
-        public Product CreateProduct(Product product);
         public Manufacturer GetManufacturer(int id);
         public Manufacturer GetManufacturers();
         public Manufacturer CreateManufacturers(Manufacturer manufacturer);
+        public Manufacturer UpdateManufacturer(Manufacturer manufacturer);
+        public Manufacturer DeleteManufacturer(Manufacturer manufacturer);
     }
 }

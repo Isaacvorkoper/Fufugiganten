@@ -6,9 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FufugigantenAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ManufacturersController : ControllerBase
@@ -21,6 +23,7 @@ namespace FufugigantenAPI.Controllers
         }
 
         // Get Manufacturers by id
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<Manufacturer> Get(int id)
         {
@@ -39,6 +42,7 @@ namespace FufugigantenAPI.Controllers
 
             // 200 ok 
             return manufacturer;
+            // Get all manufacturers
         }
         [HttpGet]
         public ActionResult<IEnumerable<Manufacturer>> Get()
@@ -54,15 +58,29 @@ namespace FufugigantenAPI.Controllers
                 throw new ArgumentException("Something went wrong" + ex.Message);
             }
 
-            if(manufacturers.Count < 1) return NotFound();
+            if (manufacturers.Count < 1) return NotFound();
 
             return manufacturers;
         }
-
+        // Create new manufacturers
         [HttpPost]
         public ActionResult<Manufacturer> Post([FromBody] Manufacturer manufacturer)
         {
             ORM.CreateManufacturer(manufacturer);
+            return manufacturer;
+        }
+        // Update a manufacturer
+        [HttpPut]
+        public ActionResult<Manufacturer> Put([FromBody] Manufacturer manufacturer)
+        {
+            ORM.UpdateManufacturer(manufacturer);
+            return manufacturer;
+        }
+
+        [HttpDelete]
+        public ActionResult<Manufacturer> Delete([FromBody] Manufacturer manufacturer)
+        {
+            ORM.DeleteManufacturer(manufacturer);
             return manufacturer;
         }
     }
