@@ -11,5 +11,6 @@ namespace FufugigantenORM
         public Manufacturer CreateManufacturers(Manufacturer manufacturer);
         public Manufacturer UpdateManufacturer(Manufacturer manufacturer);
         public Manufacturer DeleteManufacturer(Manufacturer manufacturer);
+        public Product GetProducts();
     }
 }

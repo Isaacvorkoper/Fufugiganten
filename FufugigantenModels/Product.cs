@@ -15,26 +15,18 @@ namespace FufugigantenModels
         public decimal Price { get; set; }
         public ProductType ProductType { get; set; }
         public Manufacturer Manufacturer { get; set; }
-
-        // Constructor, takes name
-        [JsonConstructor]
-        public Product(string name, decimal price, ProductType producttype, Manufacturer manufacturer)
-        {
-            Name = name;
-            Price = price;
-            ProductType = producttype;
-            Manufacturer = manufacturer;
-        }
-
         // Constructor overload, takes id, name
-        public Product(int productid, string name, decimal price, ProductType producttype, Manufacturer manufacturer)
+        [JsonConstructor]
+        public Product(int productId, string name, decimal price, ProductType productType, Manufacturer manufacturer)
         {
-            ProductId = productid;
+            ProductId = productId;
             Name = name;
             Price = price;
-            ProductType = producttype;
+            ProductType = productType;
             Manufacturer = manufacturer;
         }
+
+
         public void SetId(int id)
         {
             ProductId = id;

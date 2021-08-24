@@ -23,7 +23,6 @@ namespace FufugigantenAPI.Controllers
         }
 
         // Get Manufacturers by id
-        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<Manufacturer> Get(int id)
         {
@@ -42,7 +41,7 @@ namespace FufugigantenAPI.Controllers
 
             // 200 ok 
             return manufacturer;
-            // Get all manufacturers
+            
         }
         [HttpGet]
         public ActionResult<IEnumerable<Manufacturer>> Get()
@@ -77,6 +76,7 @@ namespace FufugigantenAPI.Controllers
             return manufacturer;
         }
 
+        // Delete a manufacturer
         [HttpDelete]
         public ActionResult<Manufacturer> Delete([FromBody] Manufacturer manufacturer)
         {
