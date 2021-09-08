@@ -23,6 +23,7 @@ namespace FufugigantenAPI.Controllers
         }
 
         // Get Manufacturers by id
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public ActionResult<Manufacturer> Get(int id)
         {
@@ -43,6 +44,7 @@ namespace FufugigantenAPI.Controllers
             return manufacturer;
             
         }
+        // Get all manufacturers
         [HttpGet]
         public ActionResult<IEnumerable<Manufacturer>> Get()
         {
@@ -62,6 +64,7 @@ namespace FufugigantenAPI.Controllers
             return manufacturers;
         }
         // Create new manufacturers
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult<Manufacturer> Post([FromBody] Manufacturer manufacturer)
         {
@@ -69,6 +72,7 @@ namespace FufugigantenAPI.Controllers
             return manufacturer;
         }
         // Update a manufacturer
+        [AllowAnonymous]
         [HttpPut]
         public ActionResult<Manufacturer> Put([FromBody] Manufacturer manufacturer)
         {
@@ -77,6 +81,7 @@ namespace FufugigantenAPI.Controllers
         }
 
         // Delete a manufacturer
+        [AllowAnonymous]
         [HttpDelete]
         public ActionResult<Manufacturer> Delete([FromBody] Manufacturer manufacturer)
         {

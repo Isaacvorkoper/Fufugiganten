@@ -26,7 +26,6 @@ namespace FufugigantenModels
             Manufacturer = manufacturer;
         }
 
-
         public void SetId(int id)
         {
             ProductId = id;
